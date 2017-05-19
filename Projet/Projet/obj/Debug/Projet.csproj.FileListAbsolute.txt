@@ -1,1 +1,2 @@
 X:\A21\Projet\Projet\Projet\bin\Debug\Projet.exe.config
+X:\A21\Projet\Git\Projet\Projet\bin\Debug\Projet.exe.config
