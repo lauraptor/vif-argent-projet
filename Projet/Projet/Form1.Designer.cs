@@ -28,20 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.lblDateDep = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // lblDateDep
+            // 
+            this.lblDateDep.AutoSize = true;
+            this.lblDateDep.Location = new System.Drawing.Point(49, 56);
+            this.lblDateDep.Name = "lblDateDep";
+            this.lblDateDep.Size = new System.Drawing.Size(100, 13);
+            this.lblDateDep.TabIndex = 0;
+            this.lblDateDep.Text = "Date de la dépense";
             // 
             // frmAppli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(669, 412);
+            this.Controls.Add(this.lblDateDep);
             this.Name = "frmAppli";
             this.Text = "Vif Argent";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lblDateDep;
     }
 }
 
