@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace Projet
 {
@@ -15,6 +16,11 @@ namespace Projet
         public frmAppli()
         {
             InitializeComponent();
+        }
+
+        private void frmAppli_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

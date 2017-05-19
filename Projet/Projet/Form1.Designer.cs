@@ -48,6 +48,7 @@
             this.Controls.Add(this.lblDateDep);
             this.Name = "frmAppli";
             this.Text = "Vif Argent";
+            this.Load += new System.EventHandler(this.frmAppli_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
