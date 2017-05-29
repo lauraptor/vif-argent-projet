@@ -15,6 +15,7 @@ namespace Projet
     {
 
         OleDbConnection connec = new OleDbConnection();
+
         public frmAppli()
         {
             InitializeComponent();
@@ -26,7 +27,7 @@ namespace Projet
 
         private void frmAppli_Load(object sender, EventArgs e)
         {
-
+            
             try
             {
                 connec.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=\\pie\tunterfinger\A21\Projet\Git\budget1.mdb";
@@ -78,6 +79,8 @@ namespace Projet
             frm.Show();
         }
 
+
+        //Ajout d'une transaction dans la base
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             //Vérification que le formulaire soit rempli avant la création d'une transaction
@@ -87,7 +90,29 @@ namespace Projet
             }
             else
             {
+                int code;
+                try
+                {
+                    //Récupération du numéro de transaction
+                    connec.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=\\pie\tunterfinger\A21\Projet\Git\budget1.mdb";
+                    connec.Open();
+                    OleDbCommand command = new OleDbCommand();
+                    command.Connection = connec;
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "select max(codeTransaction) from [Transaction]";
+                    code = (int) command.ExecuteScalar() + 1;
+                    
+                    //Création de la requète d'ajout
+                    string ajout = "insert into [Transaction] values (" + code + ", to_date(" + dtpDate.Value + ", DD/MM/YYYY), "+txtDescription.Text +","+txtMontant;
+                    MessageBox.Show(ajout);
 
+                }
+                finally
+                {
+
+                }
+                
+                
             }
         }
     }
