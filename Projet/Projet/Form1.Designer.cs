@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAppli));
             this.lblDateDep = new System.Windows.Forms.Label();
             this.tabcTransaction = new System.Windows.Forms.TabControl();
             this.tabAjoutTransac = new System.Windows.Forms.TabPage();
@@ -98,12 +99,10 @@
             // 
             // dtpDate
             // 
-            this.dtpDate.CustomFormat = "dd\'/\'MM\'/\'yyyy";
             this.dtpDate.Location = new System.Drawing.Point(151, 16);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(200, 20);
             this.dtpDate.TabIndex = 12;
-            this.dtpDate.Value = new System.DateTime(2017, 5, 29, 16, 50, 30, 0);
             // 
             // btnAjouter
             // 
@@ -242,10 +241,12 @@
             // 
             // frmAppli
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(740, 412);
             this.Controls.Add(this.tabcTransaction);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAppli";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vif Argent";
