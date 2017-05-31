@@ -98,10 +98,12 @@
             // 
             // dtpDate
             // 
+            this.dtpDate.CustomFormat = "dd\'/\'MM\'/\'yyyy";
             this.dtpDate.Location = new System.Drawing.Point(151, 16);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(200, 20);
             this.dtpDate.TabIndex = 12;
+            this.dtpDate.Value = new System.DateTime(2017, 5, 29, 16, 50, 30, 0);
             // 
             // btnAjouter
             // 

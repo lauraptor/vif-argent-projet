@@ -19,3 +19,13 @@ X:\A21\Projet\Git\Projet\Projet\obj\Debug\Projet.Properties.Resources.resources
 X:\A21\Projet\Git\Projet\Projet\obj\Debug\Projet.csproj.GenerateResource.Cache
 X:\A21\Projet\Git\Projet\Projet\obj\Debug\Projet.exe
 X:\A21\Projet\Git\Projet\Projet\obj\Debug\Projet.pdb
+X:\Projet_D21\vif-argent-projet-test\Projet\Projet\bin\Debug\Projet.exe.config
+X:\Projet_D21\vif-argent-projet-test\Projet\Projet\obj\Debug\Projet.exe
+X:\Projet_D21\vif-argent-projet-test\Projet\Projet\obj\Debug\Projet.pdb
+X:\Projet_D21\vif-argent-projet-test\Projet\Projet\bin\Debug\Projet.exe
+X:\Projet_D21\vif-argent-projet-test\Projet\Projet\bin\Debug\Projet.pdb
+X:\Projet_D21\vif-argent-projet-test\Projet\Projet\obj\Debug\Projet.frmAppli.resources
+X:\Projet_D21\vif-argent-projet-test\Projet\Projet\obj\Debug\Projet.Libelle_Type.resources
+X:\Projet_D21\vif-argent-projet-test\Projet\Projet\obj\Debug\Projet.Properties.Resources.resources
+X:\Projet_D21\vif-argent-projet-test\Projet\Projet\obj\Debug\Projet.csproj.GenerateResource.Cache
+X:\Projet_D21\vif-argent-projet-test\Projet\Projet\obj\Debug\Projet.csprojResolveAssemblyReference.cache
