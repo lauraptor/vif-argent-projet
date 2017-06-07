@@ -41,6 +41,7 @@
             this.lblNewType.Size = new System.Drawing.Size(145, 13);
             this.lblNewType.TabIndex = 0;
             this.lblNewType.Text = "Rentrez votre nouveau type :";
+            this.lblNewType.Click += new System.EventHandler(this.lblNewType_Click);
             // 
             // textBox1
             // 
