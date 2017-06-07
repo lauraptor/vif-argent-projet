@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Libelle_Type));
             this.lblNewType = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnAjoutType = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@
             this.lblNewType.Size = new System.Drawing.Size(145, 13);
             this.lblNewType.TabIndex = 0;
             this.lblNewType.Text = "Rentrez votre nouveau type :";
-            this.lblNewType.Click += new System.EventHandler(this.lblNewType_Click);
             // 
             // textBox1
             // 
@@ -69,6 +69,7 @@
             this.Controls.Add(this.btnAjoutType);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblNewType);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Libelle_Type";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Libellé du nouveau type";

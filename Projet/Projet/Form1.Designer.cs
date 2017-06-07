@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAppli));
             this.lblDateDep = new System.Windows.Forms.Label();
             this.tabcTransaction = new System.Windows.Forms.TabControl();
             this.tabAjoutTransac = new System.Windows.Forms.TabPage();
@@ -45,23 +46,23 @@
             this.lblMontant = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
             this.tab1a12 = new System.Windows.Forms.TabPage();
+            this.btnDernier = new System.Windows.Forms.Button();
+            this.btnSuivant = new System.Windows.Forms.Button();
+            this.btnPrecedent = new System.Windows.Forms.Button();
+            this.btnPremier = new System.Windows.Forms.Button();
+            this.lboPersonne = new System.Windows.Forms.ListBox();
+            this.cboxRecette = new System.Windows.Forms.CheckBox();
+            this.cboxPercue = new System.Windows.Forms.CheckBox();
+            this.lblCout = new System.Windows.Forms.Label();
+            this.lblDescri = new System.Windows.Forms.Label();
+            this.lblType1 = new System.Windows.Forms.Label();
+            this.lblCodeType = new System.Windows.Forms.Label();
             this.labelTpe = new System.Windows.Forms.Label();
             this.cboDateTransac = new System.Windows.Forms.ComboBox();
             this.tabSupTransac = new System.Windows.Forms.TabPage();
             this.tabModifTransac = new System.Windows.Forms.TabPage();
             this.tabRécap = new System.Windows.Forms.TabPage();
             this.tabPerso = new System.Windows.Forms.TabPage();
-            this.lblCodeType = new System.Windows.Forms.Label();
-            this.lblType1 = new System.Windows.Forms.Label();
-            this.lblDescri = new System.Windows.Forms.Label();
-            this.lblCout = new System.Windows.Forms.Label();
-            this.cboxPercue = new System.Windows.Forms.CheckBox();
-            this.cboxRecette = new System.Windows.Forms.CheckBox();
-            this.lboPersonne = new System.Windows.Forms.ListBox();
-            this.btnPremier = new System.Windows.Forms.Button();
-            this.btnPrecedent = new System.Windows.Forms.Button();
-            this.btnSuivant = new System.Windows.Forms.Button();
-            this.btnDernier = new System.Windows.Forms.Button();
             this.tabcTransaction.SuspendLayout();
             this.tabAjoutTransac.SuspendLayout();
             this.tab1a12.SuspendLayout();
@@ -109,11 +110,10 @@
             this.tabAjoutTransac.Location = new System.Drawing.Point(4, 22);
             this.tabAjoutTransac.Name = "tabAjoutTransac";
             this.tabAjoutTransac.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAjoutTransac.Size = new System.Drawing.Size(708, 362);
+            this.tabAjoutTransac.Size = new System.Drawing.Size(708, 398);
             this.tabAjoutTransac.TabIndex = 0;
             this.tabAjoutTransac.Text = "Ajout d\'une transaction";
             this.tabAjoutTransac.UseVisualStyleBackColor = true;
-            this.tabAjoutTransac.Click += new System.EventHandler(this.tabAjoutTransac_Click);
             // 
             // label1
             // 
@@ -252,7 +252,106 @@
             this.tab1a12.TabIndex = 1;
             this.tab1a12.Text = "Affichage 1 à 1";
             this.tab1a12.UseVisualStyleBackColor = true;
-            this.tab1a12.Click += new System.EventHandler(this.tab1a12_Click);
+            // 
+            // btnDernier
+            // 
+            this.btnDernier.Location = new System.Drawing.Point(414, 341);
+            this.btnDernier.Name = "btnDernier";
+            this.btnDernier.Size = new System.Drawing.Size(145, 23);
+            this.btnDernier.TabIndex = 12;
+            this.btnDernier.Text = ">>";
+            this.btnDernier.UseVisualStyleBackColor = true;
+            // 
+            // btnSuivant
+            // 
+            this.btnSuivant.Location = new System.Drawing.Point(293, 341);
+            this.btnSuivant.Name = "btnSuivant";
+            this.btnSuivant.Size = new System.Drawing.Size(115, 23);
+            this.btnSuivant.TabIndex = 11;
+            this.btnSuivant.Text = ">";
+            this.btnSuivant.UseVisualStyleBackColor = true;
+            // 
+            // btnPrecedent
+            // 
+            this.btnPrecedent.Location = new System.Drawing.Point(166, 341);
+            this.btnPrecedent.Name = "btnPrecedent";
+            this.btnPrecedent.Size = new System.Drawing.Size(121, 23);
+            this.btnPrecedent.TabIndex = 10;
+            this.btnPrecedent.Text = "<";
+            this.btnPrecedent.UseVisualStyleBackColor = true;
+            // 
+            // btnPremier
+            // 
+            this.btnPremier.Location = new System.Drawing.Point(40, 341);
+            this.btnPremier.Name = "btnPremier";
+            this.btnPremier.Size = new System.Drawing.Size(120, 23);
+            this.btnPremier.TabIndex = 9;
+            this.btnPremier.Text = "<<";
+            this.btnPremier.UseVisualStyleBackColor = true;
+            // 
+            // lboPersonne
+            // 
+            this.lboPersonne.FormattingEnabled = true;
+            this.lboPersonne.Location = new System.Drawing.Point(40, 153);
+            this.lboPersonne.Name = "lboPersonne";
+            this.lboPersonne.Size = new System.Drawing.Size(517, 147);
+            this.lboPersonne.TabIndex = 8;
+            // 
+            // cboxRecette
+            // 
+            this.cboxRecette.AutoSize = true;
+            this.cboxRecette.Location = new System.Drawing.Point(414, 119);
+            this.cboxRecette.Name = "cboxRecette";
+            this.cboxRecette.Size = new System.Drawing.Size(64, 17);
+            this.cboxRecette.TabIndex = 7;
+            this.cboxRecette.Text = "Recette";
+            this.cboxRecette.UseVisualStyleBackColor = true;
+            // 
+            // cboxPercue
+            // 
+            this.cboxPercue.AutoSize = true;
+            this.cboxPercue.Location = new System.Drawing.Point(414, 77);
+            this.cboxPercue.Name = "cboxPercue";
+            this.cboxPercue.Size = new System.Drawing.Size(60, 17);
+            this.cboxPercue.TabIndex = 6;
+            this.cboxPercue.Text = "Perçue";
+            this.cboxPercue.UseVisualStyleBackColor = true;
+            // 
+            // lblCout
+            // 
+            this.lblCout.AutoSize = true;
+            this.lblCout.Location = new System.Drawing.Point(411, 45);
+            this.lblCout.Name = "lblCout";
+            this.lblCout.Size = new System.Drawing.Size(35, 13);
+            this.lblCout.TabIndex = 5;
+            this.lblCout.Text = "label5";
+            // 
+            // lblDescri
+            // 
+            this.lblDescri.AutoSize = true;
+            this.lblDescri.Location = new System.Drawing.Point(43, 119);
+            this.lblDescri.Name = "lblDescri";
+            this.lblDescri.Size = new System.Drawing.Size(35, 13);
+            this.lblDescri.TabIndex = 4;
+            this.lblDescri.Text = "label4";
+            // 
+            // lblType1
+            // 
+            this.lblType1.AutoSize = true;
+            this.lblType1.Location = new System.Drawing.Point(43, 81);
+            this.lblType1.Name = "lblType1";
+            this.lblType1.Size = new System.Drawing.Size(35, 13);
+            this.lblType1.TabIndex = 3;
+            this.lblType1.Text = "label3";
+            // 
+            // lblCodeType
+            // 
+            this.lblCodeType.AutoSize = true;
+            this.lblCodeType.Location = new System.Drawing.Point(43, 45);
+            this.lblCodeType.Name = "lblCodeType";
+            this.lblCodeType.Size = new System.Drawing.Size(35, 13);
+            this.lblCodeType.TabIndex = 2;
+            this.lblCodeType.Text = "label2";
             // 
             // labelTpe
             // 
@@ -275,7 +374,7 @@
             // 
             this.tabSupTransac.Location = new System.Drawing.Point(4, 22);
             this.tabSupTransac.Name = "tabSupTransac";
-            this.tabSupTransac.Size = new System.Drawing.Size(708, 362);
+            this.tabSupTransac.Size = new System.Drawing.Size(708, 398);
             this.tabSupTransac.TabIndex = 2;
             this.tabSupTransac.Text = "Suppression d\'une transaction";
             this.tabSupTransac.UseVisualStyleBackColor = true;
@@ -284,7 +383,7 @@
             // 
             this.tabModifTransac.Location = new System.Drawing.Point(4, 22);
             this.tabModifTransac.Name = "tabModifTransac";
-            this.tabModifTransac.Size = new System.Drawing.Size(708, 362);
+            this.tabModifTransac.Size = new System.Drawing.Size(708, 398);
             this.tabModifTransac.TabIndex = 3;
             this.tabModifTransac.Text = "Modification d\'une transaction";
             this.tabModifTransac.UseVisualStyleBackColor = true;
@@ -293,7 +392,7 @@
             // 
             this.tabRécap.Location = new System.Drawing.Point(4, 22);
             this.tabRécap.Name = "tabRécap";
-            this.tabRécap.Size = new System.Drawing.Size(708, 362);
+            this.tabRécap.Size = new System.Drawing.Size(708, 398);
             this.tabRécap.TabIndex = 4;
             this.tabRécap.Text = "Récapiltulatif";
             this.tabRécap.UseVisualStyleBackColor = true;
@@ -302,110 +401,10 @@
             // 
             this.tabPerso.Location = new System.Drawing.Point(4, 22);
             this.tabPerso.Name = "tabPerso";
-            this.tabPerso.Size = new System.Drawing.Size(708, 362);
+            this.tabPerso.Size = new System.Drawing.Size(708, 398);
             this.tabPerso.TabIndex = 5;
             this.tabPerso.Text = "Gestion des personnes";
             this.tabPerso.UseVisualStyleBackColor = true;
-            // 
-            // lblCodeType
-            // 
-            this.lblCodeType.AutoSize = true;
-            this.lblCodeType.Location = new System.Drawing.Point(43, 45);
-            this.lblCodeType.Name = "lblCodeType";
-            this.lblCodeType.Size = new System.Drawing.Size(35, 13);
-            this.lblCodeType.TabIndex = 2;
-            this.lblCodeType.Text = "label2";
-            // 
-            // lblType1
-            // 
-            this.lblType1.AutoSize = true;
-            this.lblType1.Location = new System.Drawing.Point(43, 81);
-            this.lblType1.Name = "lblType1";
-            this.lblType1.Size = new System.Drawing.Size(35, 13);
-            this.lblType1.TabIndex = 3;
-            this.lblType1.Text = "label3";
-            // 
-            // lblDescri
-            // 
-            this.lblDescri.AutoSize = true;
-            this.lblDescri.Location = new System.Drawing.Point(43, 119);
-            this.lblDescri.Name = "lblDescri";
-            this.lblDescri.Size = new System.Drawing.Size(35, 13);
-            this.lblDescri.TabIndex = 4;
-            this.lblDescri.Text = "label4";
-            // 
-            // lblCout
-            // 
-            this.lblCout.AutoSize = true;
-            this.lblCout.Location = new System.Drawing.Point(411, 45);
-            this.lblCout.Name = "lblCout";
-            this.lblCout.Size = new System.Drawing.Size(35, 13);
-            this.lblCout.TabIndex = 5;
-            this.lblCout.Text = "label5";
-            // 
-            // cboxPercue
-            // 
-            this.cboxPercue.AutoSize = true;
-            this.cboxPercue.Location = new System.Drawing.Point(414, 77);
-            this.cboxPercue.Name = "cboxPercue";
-            this.cboxPercue.Size = new System.Drawing.Size(60, 17);
-            this.cboxPercue.TabIndex = 6;
-            this.cboxPercue.Text = "Perçue";
-            this.cboxPercue.UseVisualStyleBackColor = true;
-            // 
-            // cboxRecette
-            // 
-            this.cboxRecette.AutoSize = true;
-            this.cboxRecette.Location = new System.Drawing.Point(414, 119);
-            this.cboxRecette.Name = "cboxRecette";
-            this.cboxRecette.Size = new System.Drawing.Size(64, 17);
-            this.cboxRecette.TabIndex = 7;
-            this.cboxRecette.Text = "Recette";
-            this.cboxRecette.UseVisualStyleBackColor = true;
-            // 
-            // lboPersonne
-            // 
-            this.lboPersonne.FormattingEnabled = true;
-            this.lboPersonne.Location = new System.Drawing.Point(40, 153);
-            this.lboPersonne.Name = "lboPersonne";
-            this.lboPersonne.Size = new System.Drawing.Size(517, 147);
-            this.lboPersonne.TabIndex = 8;
-            // 
-            // btnPremier
-            // 
-            this.btnPremier.Location = new System.Drawing.Point(40, 341);
-            this.btnPremier.Name = "btnPremier";
-            this.btnPremier.Size = new System.Drawing.Size(120, 23);
-            this.btnPremier.TabIndex = 9;
-            this.btnPremier.Text = "<<";
-            this.btnPremier.UseVisualStyleBackColor = true;
-            // 
-            // btnPrecedent
-            // 
-            this.btnPrecedent.Location = new System.Drawing.Point(166, 341);
-            this.btnPrecedent.Name = "btnPrecedent";
-            this.btnPrecedent.Size = new System.Drawing.Size(121, 23);
-            this.btnPrecedent.TabIndex = 10;
-            this.btnPrecedent.Text = "<";
-            this.btnPrecedent.UseVisualStyleBackColor = true;
-            // 
-            // btnSuivant
-            // 
-            this.btnSuivant.Location = new System.Drawing.Point(293, 341);
-            this.btnSuivant.Name = "btnSuivant";
-            this.btnSuivant.Size = new System.Drawing.Size(115, 23);
-            this.btnSuivant.TabIndex = 11;
-            this.btnSuivant.Text = ">";
-            this.btnSuivant.UseVisualStyleBackColor = true;
-            // 
-            // btnDernier
-            // 
-            this.btnDernier.Location = new System.Drawing.Point(414, 341);
-            this.btnDernier.Name = "btnDernier";
-            this.btnDernier.Size = new System.Drawing.Size(145, 23);
-            this.btnDernier.TabIndex = 12;
-            this.btnDernier.Text = ">>";
-            this.btnDernier.UseVisualStyleBackColor = true;
             // 
             // frmAppli
             // 
@@ -413,6 +412,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(740, 448);
             this.Controls.Add(this.tabcTransaction);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAppli";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vif Argent";
