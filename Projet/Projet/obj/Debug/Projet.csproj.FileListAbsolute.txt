@@ -58,3 +58,4 @@ D:\Documents\Cours\Projet_A21\vif-argent-projet-testLocal\vif-argent-projet-test
 D:\Documents\Cours\Projet_A21\vif-argent-projet-testLocal\vif-argent-projet-test\Projet\Projet\obj\Debug\Projet.csproj.GenerateResource.Cache
 D:\Documents\Cours\Projet_A21\vif-argent-projet-testLocal\vif-argent-projet-test\Projet\Projet\obj\Debug\Projet.exe
 D:\Documents\Cours\Projet_A21\vif-argent-projet-testLocal\vif-argent-projet-test\Projet\Projet\obj\Debug\Projet.pdb
+D:\Documents\Cours\Projet_A21\vif-argent-projet-testLocal\vif-argent-projet-test\Projet\Projet\obj\Debug\Projet.frmPrevisionnel.resources

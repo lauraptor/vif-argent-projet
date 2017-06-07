@@ -15,17 +15,13 @@ namespace Projet
 {
     public partial class frmAppli : Form
     {
-
         OleDbConnection connec = new OleDbConnection();
+
         public frmAppli()
         {
             InitializeComponent();
         }
-
-    
-        
-        
-
+ 
         private void frmAppli_Load(object sender, EventArgs e)
         {
 
@@ -66,10 +62,7 @@ namespace Projet
                     {
                         clbPersonne.Items.Add(dr1.GetString(0));
                        
-                    }
-
-                    
-                    
+                    }   
                 }
             }
 
@@ -83,11 +76,8 @@ namespace Projet
                 if(connec.State == ConnectionState.Open)
                 {
                     connec.Close();
-                }
-                    
+                }        
             }
-          
-
         }
 
 
@@ -155,7 +145,6 @@ namespace Projet
                         connec.Close();
                     }
                 }
-
             }
         }
 
@@ -231,10 +220,7 @@ namespace Projet
                         lblType.Text = dr6.GetString(1);
                     }
                     connec.Close();
-
-
                 }
-
             }
 
             catch (InvalidOperationException error)
@@ -246,37 +232,30 @@ namespace Projet
             {
                 MessageBox.Show("Erreur de chaine de connexion !");
             }
-
-            
-
-            
+   
         }
 
         private void btnAjoutPersonne_Click(object sender, EventArgs e)
         {
             //Vérification que les champs sont remplis
-            if (txtPrenom.Text == String.Empty || txtNom.Text == String.Empty || txtTel.Text == String.Empty)
+            if (txtPrenom.Text == String.Empty || txtNom.Text == String.Empty)
             {
-                if (txtPrenom.Text == String.Empty )
+                if (txtPrenom.Text == String.Empty)
                 {
-                    error.SetError(txtPrenom,"Remplissez les champs");
+                    error.SetError(txtPrenom, "Remplissez les champs");
                 }
                 if (txtNom.Text == String.Empty)
                 {
                     error.SetError(txtNom, "Remplissez les champs");
-                }
-                if (txtTel.Text == String.Empty)
-                {
-                    error.SetError(txtTel, "Remplissez les champs");
                 }
             }
             else
             {
                 error.SetError(txtPrenom, String.Empty);
                 error.SetError(txtNom, String.Empty);
-                error.SetError(txtTel, String.Empty);
 
-                try {
+                try
+                {
                     //Ajout de la Personne
                     connec.Open();
                     OleDbCommand command = new OleDbCommand();
