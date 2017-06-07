@@ -101,9 +101,9 @@ namespace Projet
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             //Vérification que le formulaire soit rempli avant la création d'une transaction
-            if (txtDescription.Text == String.Empty || txtMontant.Text == String.Empty || (rdbPercu.Checked && !rdbRecette.Checked))
+            if (txtDescription.Text == String.Empty || txtMontant.Text == String.Empty || (rdbPercu.Checked && !rdbRecette.Checked) || clbPersonne.CheckedItems.Count == 0)
             {
-                MessageBox.Show("Veuillez remplir tout les champs ou vérifiez qu'une seule soit cochée");
+                MessageBox.Show("Veuillez remplir tout les champs");
             }
             else
             {
@@ -112,7 +112,7 @@ namespace Projet
                 try
                 {
 
-                    connec.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=X:\Projet_D21\vif-argent-projet-master\budget1.mdb";
+                    connec.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\Documents\Cours\Projet_A21\vif-argent-projet-testLocal\vif-argent-projet-test\budget1.mdb";
                     connec.Open();
 
                     //Récupération du numéro de transaction
@@ -129,12 +129,18 @@ namespace Projet
                     //Création de la requète d'ajout
                     string ajout = "insert into [Transaction] values (" + code + ", to_date('" + dtpDate.Value.ToShortDateString() + "', DD/MM/YYYY), '" + txtDescription.Text.ToString() + "','" + txtMontant.Text.ToString() + "'," + rdbRecette.Checked + "," + rdbPercu.Checked + "," + type + ")";
                     MessageBox.Show(ajout);
-                    //command.CommandText = ajout;
+                    command.CommandText = ajout;
                     //command.ExecuteNonQuery();
 
                     //Liaison de la transaction aux bénéficiaires
-                    ajout = "insert into Beneficiaires values (" + code + ",";
-
+                    for (int i = 0; i < clbPersonne.CheckedItems.Count ; i++)
+                    {
+                        command.CommandText = "select codePersonne from Personne where pnPersonne ='" + clbPersonne.CheckedItems[i] + "'";
+                        ajout = "insert into Beneficiaires values (" + code + ", " + command.ExecuteScalar().ToString() + ")";
+                        command.CommandText = ajout;
+                        MessageBox.Show(ajout);
+                        //command.ExecuteNonQuery();
+                    }
                 }
 
                 catch (Exception error)
@@ -246,6 +252,56 @@ namespace Projet
             
         }
 
+        private void btnAjoutPersonne_Click(object sender, EventArgs e)
+        {
+            //Vérification que les champs sont remplis
+            if (txtPrenom.Text == String.Empty || txtNom.Text == String.Empty || txtTel.Text == String.Empty)
+            {
+                if (txtPrenom.Text == String.Empty )
+                {
+                    error.SetError(txtPrenom,"Remplissez les champs");
+                }
+                if (txtNom.Text == String.Empty)
+                {
+                    error.SetError(txtNom, "Remplissez les champs");
+                }
+                if (txtTel.Text == String.Empty)
+                {
+                    error.SetError(txtTel, "Remplissez les champs");
+                }
+            }
+            else
+            {
+                error.SetError(txtPrenom, String.Empty);
+                error.SetError(txtNom, String.Empty);
+                error.SetError(txtTel, String.Empty);
+
+                try {
+                    //Ajout de la Personne
+                    connec.Open();
+                    OleDbCommand command = new OleDbCommand();
+                    command.Connection = connec;
+                    command.CommandText = "select max(codePersonne) from Personne";
+                    int code = (int)command.ExecuteScalar() + 1;
+                    string ajout = "insert into Personne values (" + code + ",'" + txtNom.Text + "','" + txtPrenom.Text + "','" + txtTel.Text + "')";
+                    command.CommandText = ajout;
+                    MessageBox.Show(ajout);
+                    //command.ExecuteNonQuery();
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.GetType().ToString());
+                }
+
+                finally
+                {
+                    if (connec.State == ConnectionState.Open)
+                    {
+                        connec.Close();
+                    }
+                }
+            }
+        }
     }
 }
 
