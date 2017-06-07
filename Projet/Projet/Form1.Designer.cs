@@ -48,8 +48,16 @@
             this.tabModifTransac = new System.Windows.Forms.TabPage();
             this.tabRécap = new System.Windows.Forms.TabPage();
             this.tabPerso = new System.Windows.Forms.TabPage();
+            this.lblPrenom = new System.Windows.Forms.Label();
+            this.lblNom = new System.Windows.Forms.Label();
+            this.lblTel = new System.Windows.Forms.Label();
+            this.lblTitre = new System.Windows.Forms.Label();
+            this.txtNom = new System.Windows.Forms.TextBox();
+            this.txtPrenom = new System.Windows.Forms.TextBox();
+            this.txtTel = new System.Windows.Forms.TextBox();
             this.tabcTransaction.SuspendLayout();
             this.tabAjoutTransac.SuspendLayout();
+            this.tabPerso.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblDateDep
@@ -232,12 +240,80 @@
             // 
             // tabPerso
             // 
+            this.tabPerso.Controls.Add(this.txtTel);
+            this.tabPerso.Controls.Add(this.txtPrenom);
+            this.tabPerso.Controls.Add(this.txtNom);
+            this.tabPerso.Controls.Add(this.lblTitre);
+            this.tabPerso.Controls.Add(this.lblTel);
+            this.tabPerso.Controls.Add(this.lblNom);
+            this.tabPerso.Controls.Add(this.lblPrenom);
             this.tabPerso.Location = new System.Drawing.Point(4, 22);
             this.tabPerso.Name = "tabPerso";
             this.tabPerso.Size = new System.Drawing.Size(708, 362);
             this.tabPerso.TabIndex = 5;
-            this.tabPerso.Text = "Gestion des personnes";
+            this.tabPerso.Text = "Ajout de personne";
             this.tabPerso.UseVisualStyleBackColor = true;
+            // 
+            // lblPrenom
+            // 
+            this.lblPrenom.AutoSize = true;
+            this.lblPrenom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrenom.Location = new System.Drawing.Point(94, 142);
+            this.lblPrenom.Name = "lblPrenom";
+            this.lblPrenom.Size = new System.Drawing.Size(61, 16);
+            this.lblPrenom.TabIndex = 0;
+            this.lblPrenom.Text = "Prénom :";
+            // 
+            // lblNom
+            // 
+            this.lblNom.AutoSize = true;
+            this.lblNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNom.Location = new System.Drawing.Point(94, 83);
+            this.lblNom.Name = "lblNom";
+            this.lblNom.Size = new System.Drawing.Size(43, 16);
+            this.lblNom.TabIndex = 1;
+            this.lblNom.Text = "Nom :";
+            // 
+            // lblTel
+            // 
+            this.lblTel.AutoSize = true;
+            this.lblTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTel.Location = new System.Drawing.Point(94, 202);
+            this.lblTel.Name = "lblTel";
+            this.lblTel.Size = new System.Drawing.Size(80, 16);
+            this.lblTel.TabIndex = 2;
+            this.lblTel.Text = "Téléphone :";
+            // 
+            // lblTitre
+            // 
+            this.lblTitre.AutoSize = true;
+            this.lblTitre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitre.Location = new System.Drawing.Point(227, 26);
+            this.lblTitre.Name = "lblTitre";
+            this.lblTitre.Size = new System.Drawing.Size(249, 20);
+            this.lblTitre.TabIndex = 3;
+            this.lblTitre.Text = "Formulaire d\'ajout d\'une personne";
+            // 
+            // txtNom
+            // 
+            this.txtNom.Location = new System.Drawing.Point(289, 82);
+            this.txtNom.Name = "txtNom";
+            this.txtNom.Size = new System.Drawing.Size(249, 20);
+            this.txtNom.TabIndex = 4;
+            // 
+            // txtPrenom
+            // 
+            this.txtPrenom.Location = new System.Drawing.Point(289, 141);
+            this.txtPrenom.Name = "txtPrenom";
+            this.txtPrenom.Size = new System.Drawing.Size(249, 20);
+            this.txtPrenom.TabIndex = 5;
+            // 
+            // txtTel
+            // 
+            this.txtTel.Location = new System.Drawing.Point(289, 201);
+            this.txtTel.Name = "txtTel";
+            this.txtTel.Size = new System.Drawing.Size(249, 20);
+            this.txtTel.TabIndex = 6;
             // 
             // frmAppli
             // 
@@ -254,6 +330,8 @@
             this.tabcTransaction.ResumeLayout(false);
             this.tabAjoutTransac.ResumeLayout(false);
             this.tabAjoutTransac.PerformLayout();
+            this.tabPerso.ResumeLayout(false);
+            this.tabPerso.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -279,6 +357,13 @@
         private System.Windows.Forms.Label lblMontant;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.DateTimePicker dtpDate;
+        private System.Windows.Forms.Label lblTel;
+        private System.Windows.Forms.Label lblNom;
+        private System.Windows.Forms.Label lblPrenom;
+        private System.Windows.Forms.Label lblTitre;
+        private System.Windows.Forms.TextBox txtTel;
+        private System.Windows.Forms.TextBox txtPrenom;
+        private System.Windows.Forms.TextBox txtNom;
     }
 }
 

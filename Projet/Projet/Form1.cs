@@ -21,9 +21,6 @@ namespace Projet
         }
 
     
-        
-        
-
         private void frmAppli_Load(object sender, EventArgs e)
         {
 
@@ -81,7 +78,7 @@ namespace Projet
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             //Vérification que le formulaire soit rempli avant la création d'une transaction
-            if (txtDescription.Text == String.Empty || txtMontant.Text == String.Empty || (rdbPercu.Checked && rdbRecette.Checked) || (!rdbRecette.Checked && !rdbPercu.Checked))
+            if (txtDescription.Text == String.Empty || txtMontant.Text == String.Empty || (rdbPercu.Checked && !rdbRecette.Checked))
             {
                 MessageBox.Show("Veuillez remplir tout les champs ou vérifiez qu'une seule soit cochée");
             }
