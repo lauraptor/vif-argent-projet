@@ -16,6 +16,7 @@ namespace Projet
     public partial class frmAppli : Form
     {
         OleDbConnection connec = new OleDbConnection();
+        public static DataSet ds = new DataSet();
 
         public frmAppli()
         {
@@ -27,35 +28,23 @@ namespace Projet
 
             try
             {
-                connec.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\Documents\Cours\Projet_A21\vif-argent-projet-testLocal\vif-argent-projet-test\budget1.mdb";
+                connec.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=X:\Projet_D21\vif-argent-projet-master\vif-argent-projet-master\budget1.mdb";
                 connec.Open();
-                OleDbCommand command = new OleDbCommand();
-                command.Connection = connec;
-                command.CommandType = CommandType.Text;
-                command.CommandText = "select libType from TypeTransaction";
-                OleDbDataReader dr = command.ExecuteReader();
-                if (dr.HasRows)
-                {
-                    while (dr.Read())
-                    {
-                        cboType.Items.Add(dr.GetString(0));
+                DataTable schemaTable = connec.GetOleDbSchemaTable(
+                OleDbSchemaGuid.Tables,
+                new object[] { null, null, null, "TABLE" });
 
-                    }
+                DataSetFill(schemaTable);
 
-                    this.cboType.SelectedIndex = 0;
-                    cboType.DropDownStyle = ComboBoxStyle.DropDownList;
-                }
-                else
-                {
-                    MessageBox.Show("Pas de catégorie trouvées");
-                }
+                //Remplissage de la combobox des types de transaction
+                ComboBoxFill(cboType, "TypeTransaction", "libType", "codeType");
 
                 //requetes ligne personne
-                OleDbCommand cmd2 = new OleDbCommand();
-                cmd2.Connection = connec;
-                cmd2.CommandType = CommandType.Text;
-                cmd2.CommandText = "select pnPersonne from Personne";
-                OleDbDataReader dr1 = cmd2.ExecuteReader();
+                OleDbCommand cmd = new OleDbCommand();
+                cmd.Connection = connec;
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select pnPersonne from Personne";
+                OleDbDataReader dr1 = cmd.ExecuteReader();
                 if(dr1.HasRows)
                  {
                     while(dr1.Read())
@@ -113,8 +102,7 @@ namespace Projet
                     code = (int)command.ExecuteScalar() + 1;
 
                     //Récupération du code type de la transaction
-                    command.CommandText = "select codeType from TypeTransaction where libType= '" + cboType.SelectedItem.ToString() + "'";
-                    type = (int)command.ExecuteScalar();
+                    type = (int)cboType.SelectedItem;
 
                     //Création de la requète d'ajout
                     string ajout = "insert into [Transaction] values (" + code + ", to_date('" + dtpDate.Value.ToShortDateString() + "', DD/MM/YYYY), '" + txtDescription.Text.ToString() + "','" + txtMontant.Text.ToString() + "'," + rdbRecette.Checked + "," + rdbPercu.Checked + "," + type + ")";
@@ -280,6 +268,41 @@ namespace Projet
                     }
                 }
             }
+        }
+        
+        //Remplit la ComboBox donnee en parametre avec la table nomTable par la colonne ColonneAffichee, et la colonne cachee colonneCachee
+        private void ComboBoxFill(ComboBox cb, string nomTable, string ColonneAffichee, string colonneCachee)
+        {
+            cb.DataSource = ds.Tables[nomTable];
+            cb.DisplayMember = ColonneAffichee;
+            cb.ValueMember = colonneCachee;
+        }
+
+        //Remplit la DataTable donnee en parametre
+        public void DataSetFill(DataTable schemaTable)
+        {
+            string nomTable;
+            string requete;
+            foreach (DataRow ligne in schemaTable.Rows)
+            {
+                nomTable = ligne[2].ToString();
+                requete = "SELECT * FROM [" + nomTable + "]";
+                //MessageBox.Show(requete);
+                OleDbCommand cd = new OleDbCommand(requete, connec);
+
+                OleDbDataAdapter da = new OleDbDataAdapter();
+                da.SelectCommand = cd;
+
+                da.Fill(ds, nomTable);
+            }
+            //MessageBox.Show(ds.Tables.Count.ToString());
+        }
+
+        private void btnBudgetPre_Click(object sender, EventArgs e)
+        {
+            //Affichage du formulaire du budget prévisionnel
+            frmPrevisionnel pre = new frmPrevisionnel();
+            pre.Show();
         }
     }
 }

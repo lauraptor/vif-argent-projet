@@ -11,42 +11,40 @@ using System.Data.OleDb;
 
 namespace Projet
 {
-    public partial class Libelle_Type : Form
+    public partial class frmAjoutPoste : Form
     {
-        public Libelle_Type()
+
+        public frmAjoutPoste()
         {
             InitializeComponent();
         }
 
         OleDbConnection connec = new OleDbConnection();
 
-        private void Libelle_Type_Load(object sender, EventArgs e)
+        private void frmAjoutPoste_Load(object sender, EventArgs e)
         {
-            
+
         }
 
-        private void btnAjoutType_Click(object sender, EventArgs e)
+        private void btnValider_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != String.Empty)
+            if (txtPoste.Text != String.Empty)
             {
-                String type = textBox1.Text;
+                String type = txtPoste.Text;
                 try
                 {
                     connec.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=X:\Projet_D21\vif-argent-projet-master\vif-argent-projet-master\budget1.mdb";
                     connec.Open();
-                    //Récupération du codeType le plus grand
-                    String codeType = "select max(codeType) from TypeTransaction";
-                    OleDbCommand cmd = new OleDbCommand(codeType);
+                    //Récupération du codePoste le plus grand
+                    String codePoste = "select max(codePoste) from Poste";
+                    OleDbCommand cmd = new OleDbCommand(codePoste);
                     cmd.Connection = connec;
                     int code = (int)cmd.ExecuteScalar() + 1;
 
                     //Requète d'ajout de type de transaction
-                    cmd.CommandText = "insert into TypeTransaction values (" + code + "," + textBox1.Text + ")";
+                    cmd.CommandText = "insert into Poste values (" + code + "," + txtPoste.Text + ")";
                     MessageBox.Show(cmd.CommandText);
                     //cmd.ExecuteNonQuery();
-
-                    //Ajout à la combobox des libéllés
-                    
 
                 }
                 catch (Exception error)
@@ -63,17 +61,8 @@ namespace Projet
             }
             else
             {
-                MessageBox.Show("Rentrez un libellé de type");
+                MessageBox.Show("Rentrez un libellé de poste");
             }
-        }
-
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '\x27' && !char.IsDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-
         }
     }
 }

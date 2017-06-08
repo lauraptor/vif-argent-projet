@@ -64,6 +64,7 @@
             this.tabModifTransac = new System.Windows.Forms.TabPage();
             this.tabRécap = new System.Windows.Forms.TabPage();
             this.tabPerso = new System.Windows.Forms.TabPage();
+            this.btnAjoutPersonne = new System.Windows.Forms.Button();
             this.txtTel = new System.Windows.Forms.TextBox();
             this.txtPrenom = new System.Windows.Forms.TextBox();
             this.txtNom = new System.Windows.Forms.TextBox();
@@ -71,8 +72,8 @@
             this.lblTel = new System.Windows.Forms.Label();
             this.lblNom = new System.Windows.Forms.Label();
             this.lblPrenom = new System.Windows.Forms.Label();
-            this.btnAjoutPersonne = new System.Windows.Forms.Button();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnBudgetPre = new System.Windows.Forms.Button();
             this.tabcTransaction.SuspendLayout();
             this.tabAjoutTransac.SuspendLayout();
             this.tab1a12.SuspendLayout();
@@ -100,7 +101,7 @@
             this.tabcTransaction.Location = new System.Drawing.Point(12, 12);
             this.tabcTransaction.Name = "tabcTransaction";
             this.tabcTransaction.SelectedIndex = 0;
-            this.tabcTransaction.Size = new System.Drawing.Size(716, 424);
+            this.tabcTransaction.Size = new System.Drawing.Size(716, 412);
             this.tabcTransaction.TabIndex = 1;
             // 
             // tabAjoutTransac
@@ -122,7 +123,7 @@
             this.tabAjoutTransac.Location = new System.Drawing.Point(4, 22);
             this.tabAjoutTransac.Name = "tabAjoutTransac";
             this.tabAjoutTransac.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAjoutTransac.Size = new System.Drawing.Size(708, 398);
+            this.tabAjoutTransac.Size = new System.Drawing.Size(708, 386);
             this.tabAjoutTransac.TabIndex = 0;
             this.tabAjoutTransac.Text = "Ajout d\'une transaction";
             this.tabAjoutTransac.UseVisualStyleBackColor = true;
@@ -260,7 +261,7 @@
             this.tab1a12.Location = new System.Drawing.Point(4, 22);
             this.tab1a12.Name = "tab1a12";
             this.tab1a12.Padding = new System.Windows.Forms.Padding(3);
-            this.tab1a12.Size = new System.Drawing.Size(708, 398);
+            this.tab1a12.Size = new System.Drawing.Size(708, 386);
             this.tab1a12.TabIndex = 1;
             this.tab1a12.Text = "Affichage 1 à 1";
             this.tab1a12.UseVisualStyleBackColor = true;
@@ -386,7 +387,7 @@
             // 
             this.tabSupTransac.Location = new System.Drawing.Point(4, 22);
             this.tabSupTransac.Name = "tabSupTransac";
-            this.tabSupTransac.Size = new System.Drawing.Size(708, 398);
+            this.tabSupTransac.Size = new System.Drawing.Size(708, 386);
             this.tabSupTransac.TabIndex = 2;
             this.tabSupTransac.Text = "Suppression d\'une transaction";
             this.tabSupTransac.UseVisualStyleBackColor = true;
@@ -395,7 +396,7 @@
             // 
             this.tabModifTransac.Location = new System.Drawing.Point(4, 22);
             this.tabModifTransac.Name = "tabModifTransac";
-            this.tabModifTransac.Size = new System.Drawing.Size(708, 398);
+            this.tabModifTransac.Size = new System.Drawing.Size(708, 386);
             this.tabModifTransac.TabIndex = 3;
             this.tabModifTransac.Text = "Modification d\'une transaction";
             this.tabModifTransac.UseVisualStyleBackColor = true;
@@ -404,7 +405,7 @@
             // 
             this.tabRécap.Location = new System.Drawing.Point(4, 22);
             this.tabRécap.Name = "tabRécap";
-            this.tabRécap.Size = new System.Drawing.Size(708, 398);
+            this.tabRécap.Size = new System.Drawing.Size(708, 386);
             this.tabRécap.TabIndex = 4;
             this.tabRécap.Text = "Récapiltulatif";
             this.tabRécap.UseVisualStyleBackColor = true;
@@ -421,10 +422,20 @@
             this.tabPerso.Controls.Add(this.lblPrenom);
             this.tabPerso.Location = new System.Drawing.Point(4, 22);
             this.tabPerso.Name = "tabPerso";
-            this.tabPerso.Size = new System.Drawing.Size(708, 398);
+            this.tabPerso.Size = new System.Drawing.Size(708, 386);
             this.tabPerso.TabIndex = 5;
             this.tabPerso.Text = "Gestion des personnes";
             this.tabPerso.UseVisualStyleBackColor = true;
+            // 
+            // btnAjoutPersonne
+            // 
+            this.btnAjoutPersonne.Location = new System.Drawing.Point(555, 336);
+            this.btnAjoutPersonne.Name = "btnAjoutPersonne";
+            this.btnAjoutPersonne.Size = new System.Drawing.Size(133, 39);
+            this.btnAjoutPersonne.TabIndex = 14;
+            this.btnAjoutPersonne.Text = "Ajout de la personne";
+            this.btnAjoutPersonne.UseVisualStyleBackColor = true;
+            this.btnAjoutPersonne.Click += new System.EventHandler(this.btnAjoutPersonne_Click);
             // 
             // txtTel
             // 
@@ -487,26 +498,27 @@
             this.lblPrenom.TabIndex = 7;
             this.lblPrenom.Text = "Prénom :";
             // 
-            // btnAjoutPersonne
-            // 
-            this.btnAjoutPersonne.Location = new System.Drawing.Point(555, 336);
-            this.btnAjoutPersonne.Name = "btnAjoutPersonne";
-            this.btnAjoutPersonne.Size = new System.Drawing.Size(133, 39);
-            this.btnAjoutPersonne.TabIndex = 14;
-            this.btnAjoutPersonne.Text = "Ajout de la personne";
-            this.btnAjoutPersonne.UseVisualStyleBackColor = true;
-            this.btnAjoutPersonne.Click += new System.EventHandler(this.btnAjoutPersonne_Click);
-            // 
             // error
             // 
             this.error.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.error.ContainerControl = this;
             // 
+            // btnBudgetPre
+            // 
+            this.btnBudgetPre.Location = new System.Drawing.Point(12, 430);
+            this.btnBudgetPre.Name = "btnBudgetPre";
+            this.btnBudgetPre.Size = new System.Drawing.Size(716, 25);
+            this.btnBudgetPre.TabIndex = 2;
+            this.btnBudgetPre.Text = "Passer au budget prévisionnel";
+            this.btnBudgetPre.UseVisualStyleBackColor = true;
+            this.btnBudgetPre.Click += new System.EventHandler(this.btnBudgetPre_Click);
+            // 
             // frmAppli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 448);
+            this.ClientSize = new System.Drawing.Size(740, 462);
+            this.Controls.Add(this.btnBudgetPre);
             this.Controls.Add(this.tabcTransaction);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAppli";
@@ -570,6 +582,7 @@
         private System.Windows.Forms.Label lblPrenom;
         private System.Windows.Forms.Button btnAjoutPersonne;
         private System.Windows.Forms.ErrorProvider error;
+        private System.Windows.Forms.Button btnBudgetPre;
     }
 }
 

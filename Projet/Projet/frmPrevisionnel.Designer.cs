@@ -51,14 +51,16 @@
             this.lblCom = new System.Windows.Forms.Label();
             this.lblIntitule = new System.Windows.Forms.Label();
             this.tabRevenu = new System.Windows.Forms.TabPage();
+            this.btnValiderRev = new System.Windows.Forms.Button();
+            this.btnPoste = new System.Windows.Forms.Button();
+            this.cboPosteRev = new System.Windows.Forms.ComboBox();
+            this.cboBenef = new System.Windows.Forms.ComboBox();
             this.txtJourDuMois = new System.Windows.Forms.TextBox();
             this.txtMontantRev = new System.Windows.Forms.TextBox();
-            this.txtPosteRev = new System.Windows.Forms.TextBox();
             this.lblJourDuMois = new System.Windows.Forms.Label();
             this.lblMontantRev = new System.Windows.Forms.Label();
             this.lblBenef = new System.Windows.Forms.Label();
             this.lblPosteRev = new System.Windows.Forms.Label();
-            this.cboBenef = new System.Windows.Forms.ComboBox();
             this.tabcPrevision.SuspendLayout();
             this.tabPosteFixe.SuspendLayout();
             this.tabPostePonctuel.SuspendLayout();
@@ -132,9 +134,9 @@
             // 
             // btnValider
             // 
-            this.btnValider.Location = new System.Drawing.Point(442, 342);
+            this.btnValider.Location = new System.Drawing.Point(501, 383);
             this.btnValider.Name = "btnValider";
-            this.btnValider.Size = new System.Drawing.Size(173, 34);
+            this.btnValider.Size = new System.Drawing.Size(148, 34);
             this.btnValider.TabIndex = 5;
             this.btnValider.Text = "Valider";
             this.btnValider.UseVisualStyleBackColor = true;
@@ -226,6 +228,8 @@
             this.txtPrelevement.Name = "txtPrelevement";
             this.txtPrelevement.Size = new System.Drawing.Size(36, 20);
             this.txtPrelevement.TabIndex = 5;
+            this.txtPrelevement.TextChanged += new System.EventHandler(this.txtPrelevement_TextChanged);
+            this.txtPrelevement.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrelevement_KeyPress);
             // 
             // txtCom
             // 
@@ -270,10 +274,12 @@
             // 
             // tabRevenu
             // 
+            this.tabRevenu.Controls.Add(this.btnValiderRev);
+            this.tabRevenu.Controls.Add(this.btnPoste);
+            this.tabRevenu.Controls.Add(this.cboPosteRev);
             this.tabRevenu.Controls.Add(this.cboBenef);
             this.tabRevenu.Controls.Add(this.txtJourDuMois);
             this.tabRevenu.Controls.Add(this.txtMontantRev);
-            this.tabRevenu.Controls.Add(this.txtPosteRev);
             this.tabRevenu.Controls.Add(this.lblJourDuMois);
             this.tabRevenu.Controls.Add(this.lblMontantRev);
             this.tabRevenu.Controls.Add(this.lblBenef);
@@ -284,6 +290,42 @@
             this.tabRevenu.TabIndex = 2;
             this.tabRevenu.Text = "Revenu";
             this.tabRevenu.UseVisualStyleBackColor = true;
+            // 
+            // btnValiderRev
+            // 
+            this.btnValiderRev.Location = new System.Drawing.Point(501, 383);
+            this.btnValiderRev.Name = "btnValiderRev";
+            this.btnValiderRev.Size = new System.Drawing.Size(148, 34);
+            this.btnValiderRev.TabIndex = 11;
+            this.btnValiderRev.Text = "Valider";
+            this.btnValiderRev.UseVisualStyleBackColor = true;
+            this.btnValiderRev.Click += new System.EventHandler(this.btnValider_Click);
+            // 
+            // btnPoste
+            // 
+            this.btnPoste.Location = new System.Drawing.Point(514, 42);
+            this.btnPoste.Name = "btnPoste";
+            this.btnPoste.Size = new System.Drawing.Size(75, 21);
+            this.btnPoste.TabIndex = 10;
+            this.btnPoste.Text = "Nouveau";
+            this.btnPoste.UseVisualStyleBackColor = true;
+            this.btnPoste.Click += new System.EventHandler(this.btnNouveau_Click);
+            // 
+            // cboPosteRev
+            // 
+            this.cboPosteRev.FormattingEnabled = true;
+            this.cboPosteRev.Location = new System.Drawing.Point(179, 42);
+            this.cboPosteRev.Name = "cboPosteRev";
+            this.cboPosteRev.Size = new System.Drawing.Size(249, 21);
+            this.cboPosteRev.TabIndex = 9;
+            // 
+            // cboBenef
+            // 
+            this.cboBenef.FormattingEnabled = true;
+            this.cboBenef.Location = new System.Drawing.Point(179, 99);
+            this.cboBenef.Name = "cboBenef";
+            this.cboBenef.Size = new System.Drawing.Size(249, 21);
+            this.cboBenef.TabIndex = 8;
             // 
             // txtJourDuMois
             // 
@@ -298,13 +340,6 @@
             this.txtMontantRev.Name = "txtMontantRev";
             this.txtMontantRev.Size = new System.Drawing.Size(100, 20);
             this.txtMontantRev.TabIndex = 6;
-            // 
-            // txtPosteRev
-            // 
-            this.txtPosteRev.Location = new System.Drawing.Point(179, 42);
-            this.txtPosteRev.Name = "txtPosteRev";
-            this.txtPosteRev.Size = new System.Drawing.Size(249, 20);
-            this.txtPosteRev.TabIndex = 4;
             // 
             // lblJourDuMois
             // 
@@ -342,14 +377,6 @@
             this.lblPosteRev.TabIndex = 0;
             this.lblPosteRev.Text = "Quel poste ?";
             // 
-            // cboBenef
-            // 
-            this.cboBenef.FormattingEnabled = true;
-            this.cboBenef.Location = new System.Drawing.Point(179, 99);
-            this.cboBenef.Name = "cboBenef";
-            this.cboBenef.Size = new System.Drawing.Size(249, 21);
-            this.cboBenef.TabIndex = 8;
-            // 
             // frmPrevisionnel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -358,6 +385,7 @@
             this.Controls.Add(this.tabcPrevision);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrevisionnel";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Budget Prévisionnel";
             this.Load += new System.EventHandler(this.frmPrevisionnel_Load);
             this.tabcPrevision.ResumeLayout(false);
@@ -397,11 +425,13 @@
         private System.Windows.Forms.Button btnPonctuel;
         private System.Windows.Forms.TextBox txtJourDuMois;
         private System.Windows.Forms.TextBox txtMontantRev;
-        private System.Windows.Forms.TextBox txtPosteRev;
         private System.Windows.Forms.Label lblJourDuMois;
         private System.Windows.Forms.Label lblMontantRev;
         private System.Windows.Forms.Label lblBenef;
         private System.Windows.Forms.Label lblPosteRev;
         private System.Windows.Forms.ComboBox cboBenef;
+        private System.Windows.Forms.ComboBox cboPosteRev;
+        private System.Windows.Forms.Button btnPoste;
+        private System.Windows.Forms.Button btnValiderRev;
     }
 }
