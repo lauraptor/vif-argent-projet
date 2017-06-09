@@ -212,6 +212,7 @@
             this.btnPonctuel.TabIndex = 7;
             this.btnPonctuel.Text = "Valider";
             this.btnPonctuel.UseVisualStyleBackColor = true;
+            this.btnPonctuel.Click += new System.EventHandler(this.btnPonctuel_Click);
             // 
             // grpEcheance
             // 
@@ -237,6 +238,7 @@
             this.txtCom.Name = "txtCom";
             this.txtCom.Size = new System.Drawing.Size(197, 20);
             this.txtCom.TabIndex = 4;
+            this.txtCom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCom_KeyPress);
             // 
             // txtIntitule
             // 
@@ -244,6 +246,7 @@
             this.txtIntitule.Name = "txtIntitule";
             this.txtIntitule.Size = new System.Drawing.Size(197, 20);
             this.txtIntitule.TabIndex = 3;
+            this.txtIntitule.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIntitule_KeyPress);
             // 
             // lblPrelevement
             // 
@@ -333,6 +336,7 @@
             this.txtJourDuMois.Name = "txtJourDuMois";
             this.txtJourDuMois.Size = new System.Drawing.Size(42, 20);
             this.txtJourDuMois.TabIndex = 7;
+            this.txtJourDuMois.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtJour_KeyPress);
             // 
             // txtMontantRev
             // 
@@ -340,6 +344,7 @@
             this.txtMontantRev.Name = "txtMontantRev";
             this.txtMontantRev.Size = new System.Drawing.Size(100, 20);
             this.txtMontantRev.TabIndex = 6;
+            this.txtMontantRev.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontant_KeyPress);
             // 
             // lblJourDuMois
             // 
@@ -387,6 +392,8 @@
             this.Name = "frmPrevisionnel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Budget Prévisionnel";
+            this.Activated += new System.EventHandler(this.frmPrevisionnel_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrevisionnel_FormClosing);
             this.Load += new System.EventHandler(this.frmPrevisionnel_Load);
             this.tabcPrevision.ResumeLayout(false);
             this.tabPosteFixe.ResumeLayout(false);

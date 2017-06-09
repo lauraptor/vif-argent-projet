@@ -59,6 +59,7 @@
             this.txtPoste.Name = "txtPoste";
             this.txtPoste.Size = new System.Drawing.Size(178, 20);
             this.txtPoste.TabIndex = 2;
+            this.txtPoste.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPoste_KeyPress);
             // 
             // frmAjoutPoste
             // 

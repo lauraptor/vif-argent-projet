@@ -37,7 +37,7 @@
             // lblNewType
             // 
             this.lblNewType.AutoSize = true;
-            this.lblNewType.Location = new System.Drawing.Point(12, 19);
+            this.lblNewType.Location = new System.Drawing.Point(12, 23);
             this.lblNewType.Name = "lblNewType";
             this.lblNewType.Size = new System.Drawing.Size(145, 13);
             this.lblNewType.TabIndex = 0;
@@ -45,7 +45,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(172, 16);
+            this.textBox1.Location = new System.Drawing.Point(176, 20);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 1;
@@ -53,7 +53,7 @@
             // 
             // btnAjoutType
             // 
-            this.btnAjoutType.Location = new System.Drawing.Point(43, 55);
+            this.btnAjoutType.Location = new System.Drawing.Point(48, 66);
             this.btnAjoutType.Name = "btnAjoutType";
             this.btnAjoutType.Size = new System.Drawing.Size(198, 33);
             this.btnAjoutType.TabIndex = 2;
@@ -65,7 +65,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 111);
+            this.ClientSize = new System.Drawing.Size(299, 111);
             this.Controls.Add(this.btnAjoutType);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblNewType);

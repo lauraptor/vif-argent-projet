@@ -33,7 +33,7 @@ namespace Projet
                 String type = txtPoste.Text;
                 try
                 {
-                    connec.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=X:\Projet_D21\vif-argent-projet-master\vif-argent-projet-master\budget1.mdb";
+                    connec.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\..\..\..\budget1.mdb";
                     connec.Open();
                     //Récupération du codePoste le plus grand
                     String codePoste = "select max(codePoste) from Poste";
@@ -42,14 +42,13 @@ namespace Projet
                     int code = (int)cmd.ExecuteScalar() + 1;
 
                     //Requète d'ajout de type de transaction
-                    cmd.CommandText = "insert into Poste values (" + code + "," + txtPoste.Text + ")";
-                    MessageBox.Show(cmd.CommandText);
-                    //cmd.ExecuteNonQuery();
+                    cmd.CommandText = "insert into Poste values (" + code + ",'" + txtPoste.Text + "')";
+                    cmd.ExecuteNonQuery();
 
                 }
                 catch (Exception error)
                 {
-                    MessageBox.Show(error.GetType().ToString());
+                    MessageBox.Show(error.ToString());
                 }
                 finally
                 {
@@ -57,11 +56,24 @@ namespace Projet
                     {
                         connec.Close();
                     }
+                    
+                    //Réactive le form précédent et ferme celui-ci
+                    Owner.Activate();
+                    this.Close();
+                    
                 }
             }
             else
             {
                 MessageBox.Show("Rentrez un libellé de poste");
+            }
+        }
+
+        private void txtPoste_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '\x27' && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

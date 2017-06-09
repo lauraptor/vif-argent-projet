@@ -32,7 +32,7 @@ namespace Projet
                 String type = textBox1.Text;
                 try
                 {
-                    connec.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=X:\Projet_D21\vif-argent-projet-master\vif-argent-projet-master\budget1.mdb";
+                    connec.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\..\..\..\budget1.mdb";
                     connec.Open();
                     //Récupération du codeType le plus grand
                     String codeType = "select max(codeType) from TypeTransaction";
@@ -59,6 +59,9 @@ namespace Projet
                     {
                         connec.Close();
                     }
+                    //Réactive le form précédent et ferme celui-ci
+                    Owner.Activate();
+                    this.Close();
                 }
             }
             else
