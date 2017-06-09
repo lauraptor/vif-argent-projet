@@ -82,3 +82,15 @@ D:\Documents\Cours\Projet_A21\vif-argent-projet-master\Projet\Projet\obj\Debug\P
 D:\Documents\Cours\Projet_A21\vif-argent-projet-master\Projet\Projet\obj\Debug\Projet.csproj.GenerateResource.Cache
 D:\Documents\Cours\Projet_A21\vif-argent-projet-master\Projet\Projet\obj\Debug\Projet.exe
 D:\Documents\Cours\Projet_A21\vif-argent-projet-master\Projet\Projet\obj\Debug\Projet.pdb
+X:\Projet_D21_ver2\vif-argent-projet-master\vif-argent-projet-master\Projet\Projet\bin\Debug\Projet.exe.config
+X:\Projet_D21_ver2\vif-argent-projet-master\vif-argent-projet-master\Projet\Projet\obj\Debug\Projet.exe
+X:\Projet_D21_ver2\vif-argent-projet-master\vif-argent-projet-master\Projet\Projet\obj\Debug\Projet.pdb
+X:\Projet_D21_ver2\vif-argent-projet-master\vif-argent-projet-master\Projet\Projet\bin\Debug\Projet.exe
+X:\Projet_D21_ver2\vif-argent-projet-master\vif-argent-projet-master\Projet\Projet\bin\Debug\Projet.pdb
+X:\Projet_D21_ver2\vif-argent-projet-master\vif-argent-projet-master\Projet\Projet\obj\Debug\Projet.csprojResolveAssemblyReference.cache
+X:\Projet_D21_ver2\vif-argent-projet-master\vif-argent-projet-master\Projet\Projet\obj\Debug\Projet.frmAppli.resources
+X:\Projet_D21_ver2\vif-argent-projet-master\vif-argent-projet-master\Projet\Projet\obj\Debug\Projet.frmAjoutPoste.resources
+X:\Projet_D21_ver2\vif-argent-projet-master\vif-argent-projet-master\Projet\Projet\obj\Debug\Projet.frmPrevisionnel.resources
+X:\Projet_D21_ver2\vif-argent-projet-master\vif-argent-projet-master\Projet\Projet\obj\Debug\Projet.Libelle_Type.resources
+X:\Projet_D21_ver2\vif-argent-projet-master\vif-argent-projet-master\Projet\Projet\obj\Debug\Projet.Properties.Resources.resources
+X:\Projet_D21_ver2\vif-argent-projet-master\vif-argent-projet-master\Projet\Projet\obj\Debug\Projet.csproj.GenerateResource.Cache

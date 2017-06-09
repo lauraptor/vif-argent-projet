@@ -31,11 +31,14 @@ namespace Projet
  
         private void frmAppli_Load(object sender, EventArgs e)
         {
-
+            
             try
             {
-                connec.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\..\..\..\budget1.mdb";
-                connec.Open();
+                if (connec.State == ConnectionState.Closed)
+                {
+                    connec.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\..\..\..\budget1.mdb";
+                    connec.Open();
+                }
 
                 DataTable schemaTable = connec.GetOleDbSchemaTable(
                     OleDbSchemaGuid.Tables,
